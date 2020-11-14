@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}     {% endblock %}</title>
+    <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -14,11 +14,11 @@
 <body>
     <aside>
         <img src="{% static 'main/img/icon.png' %}" alt="logo">
-        <span class="logo"> " Это мой первый сайт" </span>
-        <h3>Навигация</h3>
+        <span class="logo">shandy2013</span>
+        <h3> Навигация </h3>
         <ul>
-            <a href=""><li><i class="fas fa-home"></i> Главная</li></a>
-            <a href=""><li><i class="fas fa-file-signature"></i></i> О компании </li></a>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-file-signature"></i> О сайте </li></a>
             <a href=""><li><i class="fas fa-address-card"></i> Контакты</li></a>
         </ul>
     </aside>
@@ -26,7 +26,5 @@
         {% block content %}
         {% endblock %}
     </main>
-
-
 </body>
 </html>
